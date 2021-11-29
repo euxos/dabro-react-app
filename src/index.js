@@ -1,13 +1,16 @@
-import React, { createContext } from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import fireStore from "./fireStore";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
-export const Context = createContext(null);
+import App from './App';
+
 
 ReactDOM.render(
-  <Context.Provider value={{ fireStore }}>
+  <Provider store={store}>
+
     <App />
-  </Context.Provider>,
-  document.getElementById("root")
+
+  </Provider>,
+  document.getElementById('root')
 );

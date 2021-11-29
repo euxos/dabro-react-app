@@ -13,7 +13,19 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-const fireStore = getFirestore(firebaseApp);
+const app = initializeApp(firebaseConfig);
+const firestoreData = getFirestore(app);
+//const productsList = collection(firestoreData, "products");
 
-export default fireStore;
+
+// async function getD (db, q) {
+//   let re = [];
+//   const querySnapshot = await getDocs(collection(db, q));
+//   re = querySnapshot.docs.map(doc => doc.data());
+//   return re
+// }
+
+// const rem = getD(db, "products")
+
+export default firestoreData;
+

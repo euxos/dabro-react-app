@@ -1,32 +1,22 @@
-import React, { useContext } from "react";
-import { Context } from "../index";
-import Loader from "./Loader";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { collection } from "firebase/firestore";
-
+import React from "react";
 
 const Products = () => {
-  const { fireStore } = useContext(Context);
-
-  const [productsList, loading] = useCollectionData(
-    collection(fireStore, "products")
-  );
-
-  if (loading) {
-    return <Loader />;
-  }
+  
+  // const { productsList } = useContext(Context);
+  // const [products, loading] = useCollectionDataOnce(collection(firestoreApp, "products"));
+  // if (loading) {
+  //   <Loader />
+  // }
 
   return (
     <div>
-      {productsList.map((product) => (
-        <div key={product.id}
-            style={{border: '2px solid green'}}
-        >
+      {/* {productsList.map((product) => (
+        <div key={product.id} style={{ border: "2px solid green" }}>
           <div>{product.name}</div>
           <div>{product.description}</div>
           <div>{product.price}</div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

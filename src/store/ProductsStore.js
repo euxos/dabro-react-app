@@ -1,29 +1,30 @@
-import { makeAutoObservable } from "mobx";
+const DOWNLOAD_LIST = "DOWNLOAD_LIST";
+const GET_PRODUCTS = "GET_PRODUCTS";
 
-export default class ProductsStore {
-  constructor() {
-    this._categories = [
-      { id: 1, name: "burgers" },
-      { id: 2, name: "rolls" },
-    ];
-    this._products = [
-      { id: 1, name: "cheesburger" },
-      { id: 2, name: "shawerma" },
-    ];
-    makeAutoObservable(this);
-  }
+const defaultState = {
+  products: [],
+};
 
-  setCategories(category) {
-    this._categories = category;
-  }
-  setProducts(product) {
-    this._products = product;
-  }
+export const downloadProducts = (products) => ({
+  type: DOWNLOAD_LIST,
+  products,
+});
 
-  get categories() {
-    return this._categories;
+export const getProducts = () => ({
+  type: GET_PRODUCTS,
+});
+
+const productsReducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case DOWNLOAD_LIST:
+      return { products: action.products };
+
+    case GET_PRODUCTS:
+      return { ...state };
+
+    default:
+      return [];
   }
-  get products() {
-    return this._products;
-  }
-}
+};
+
+export default productsReducer;

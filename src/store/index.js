@@ -3,14 +3,17 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from 'redux-thunk';
 
 import cartReducer from "./cartReducer";
+import productsReducer from './productsStore';
+
+const initialState = {
+  cart: JSON.parse(localStorage.getItem('cart') || '[]'),
+  products: JSON.parse(localStorage.getItem('products') || '[]'),
+}
 
 const rootReducer = combineReducers({
   cartReducer,
+  productsReducer,
 });
-
-const initialState = {
-  cart: [JSON.parse(localStorage.getItem('cart') || '[]')],
-}
 
 // export const getCart = (cart) => cart.cartReducer;
 

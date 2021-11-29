@@ -1,6 +1,6 @@
 export const HOME_ROUTE = '/';
 export const MENU_ROUTE = '/menu';
-export const ABOUT_ROUTE = '/about';
+export const TEAM_ROUTE = '/team';
 export const CART_ROUTE = '/cart';
 
 export const BURGERS_ROUTE = '/burgers';
