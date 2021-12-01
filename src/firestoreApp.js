@@ -1,31 +1,37 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    getDoc,
+    doc,
+} from 'firebase/firestore';
 
-// Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyCLc-fwc8qY5uaC4MvJ4YeX1dVdZzoaW2I",
-  authDomain: "dabro-food.firebaseapp.com",
-  projectId: "dabro-food",
-  storageBucket: "dabro-food.appspot.com",
-  messagingSenderId: "889113170081",
-  appId: "1:889113170081:web:acf4105725c4875882e0e0",
-  measurementId: "G-81GCNGCYQT",
-};
+    apiKey: 'AIzaSyCLc-fwc8qY5uaC4MvJ4YeX1dVdZzoaW2I',
+    authDomain: 'dabro-food.firebaseapp.com',
+    projectId: 'dabro-food',
+    storageBucket: 'dabro-food.appspot.com',
+    messagingSenderId: '889113170081',
+    appId: '1:889113170081:web:acf4105725c4875882e0e0',
+    measurementId: 'G-81GCNGCYQT',
+}
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const firestoreData = getFirestore(app);
-//const productsList = collection(firestoreData, "products");
+export const firestoreData = getFirestore(app);
 
+export async function getProduct(query) {
+    const productRef = doc(firestoreData, query);
+    const productSnap = await getDoc(productRef);
+    const product = productSnap.data();
 
-// async function getD (db, q) {
-//   let re = [];
-//   const querySnapshot = await getDocs(collection(db, q));
-//   re = querySnapshot.docs.map(doc => doc.data());
-//   return re
-// }
+    return product;
+}
 
-// const rem = getD(db, "products")
+export async function getProducts() {
+    const productsCol = collection(firestoreData, 'products');
+    const productsSnap = await getDocs(productsCol);
+    const products = productsSnap.docs.map((doc) => doc.data());
 
-export default firestoreData;
-
+    return products;
+}

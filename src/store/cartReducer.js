@@ -1,57 +1,29 @@
 const ADD_TO_CART = 'ADD_TO_CART';
+const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
-const SET_CART_QUANTITY = 'SET_CART_QUANTITY';
+const CLEAR_CART = 'CLEAR_CART';
 
-export const addToCart = (product, quantity = 1) => (
-  {
-    type: ADD_TO_CART,
-    product,
-    quantity,
-  }
-);
+export const addToCart = (payload) => ({ type: ADD_TO_CART, payload });
+export const removeOneFromCart = (payload) => ({ type: REMOVE_ONE_FROM_CART, payload });
+export const removeFromCart = (payload) => ({ type: REMOVE_FROM_CART, payload });
+export const clearCart = () => ({ type: CLEAR_CART });
 
-export const removeFromCart = (product) => (
-  {
-    type: REMOVE_FROM_CART,
-    product,
-  }
-);
+export default function cartReducer(state = [], action) {
+    switch (action.type) {
+        case ADD_TO_CART:
+            return [...state, action.payload];
 
-export const setCartQuantity = (product, quantity) => (
-  {
-    type: SET_CART_QUANTITY,
-    product,
-    quantity,
-  }
-);
+        case REMOVE_ONE_FROM_CART:
+            const id = state.findIndex((item) => item.id === action.product.id);
+            return [...state.slice(0, id), ...state.slice(id + 1)];
 
-const cartReducer = (cart = [], action) => {
-  switch (action.type) {
-    case ADD_TO_CART:
-      return [
-        ...cart,
-        {
-          product: action.product,
-          quantity: action.quantity,
-        },
-      ];
+        case REMOVE_FROM_CART:
+            return state.filter((item) => item.id !== action.payload.id);
 
-    case REMOVE_FROM_CART:
-      return cart.filter(item => item.product.id !== action.product.id);
+        case CLEAR_CART:
+            return [];
 
-    case SET_CART_QUANTITY:
-      return cart.map(item => (
-        item.product.id === action.product.id
-          ? {
-            product: action.product,
-            quantity: action.quantity,
-          }
-          : item
-      ));
-
-    default:
-      return cart;
-  }
-};
-
-export default cartReducer;
+        default:
+            return state;
+    }
+}

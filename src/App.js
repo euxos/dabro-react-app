@@ -1,42 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { useCollectionDataOnce } from 'react-firebase-hooks/firestore';
-import { collection } from 'firebase/firestore';
-import { downloadProducts } from './store/productsStore';
 import Navbar from './components/NavBar';
 import AppRouter from './components/AppRouter';
+
+import { downloadProducts } from './store/productsReducer';
 import { useDispatch, useSelector } from 'react-redux';
 
-import firestoreData from './firestoreApp';
+import { getProducts } from './firestoreApp';
 
 const App = () => {
-  const [products, loading] = useCollectionDataOnce(collection(firestoreData, "products"));
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const product = useSelector(store => store.products)
+   
 
-  useEffect(() => {
-      if (loading === false) {
-        dispatch(downloadProducts(products));
-      } 
-      
-    }, [products]
-  )
-  
+    useEffect(() => {
+        getProducts().then((res) => {
+            dispatch(downloadProducts(res));
+        });
+    }, [dispatch]);
 
-  return (
-    <BrowserRouter>
-      <Navbar />
+    return (
+        <BrowserRouter>
+            <Navbar />
 
-        {/* {productsFromDB.map((product) => (
-        <div key={product.id} style={{ border: "2px solid green" }}>
-          <div>{product.name}</div>
-          <div>{product.description}</div>
-          <div>{product.price}</div>
-        </div>
-      ))}  */}
-
-      <AppRouter />
-    </BrowserRouter>
-  );
+            <AppRouter />
+        </BrowserRouter>
+    );
 };
 
 export default App;
