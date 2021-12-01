@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import GlobalStyle from './theme/globalStyles';
+import { store } from './store/index';
 import { BrowserRouter } from 'react-router-dom';
-import Navbar from './components/NavBar';
+import NavbarPannel from './components/NavbarPannel';
 import AppRouter from './components/AppRouter';
 
 import { downloadProducts } from './store/productsReducer';
@@ -8,23 +10,31 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getProducts } from './firestoreApp';
 
+
 const App = () => {
     const dispatch = useDispatch();
-    const product = useSelector(store => store.products)
-   
+
+    const p = useSelector(store => store.products);
 
     useEffect(() => {
-        getProducts().then((res) => {
-            dispatch(downloadProducts(res));
-        });
+        if (p.length === 0) {
+            getProducts().then((docs) => {
+                dispatch(downloadProducts(docs));
+
+                localStorage.setItem('products', JSON.stringify(docs));
+            });
+        }
     }, [dispatch]);
 
     return (
-        <BrowserRouter>
-            <Navbar />
+        <>
+            <GlobalStyle />
+            <BrowserRouter>
+                <NavbarPannel />
 
-            <AppRouter />
-        </BrowserRouter>
+                <AppRouter />
+            </BrowserRouter>
+        </>
     );
 };
 

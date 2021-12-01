@@ -1,11 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import {
-    getFirestore,
-    collection,
-    getDocs,
-    getDoc,
-    doc,
-} from 'firebase/firestore';
+import { getFirestore, collection, getDocs, getDoc, doc } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCLc-fwc8qY5uaC4MvJ4YeX1dVdZzoaW2I',
@@ -15,7 +9,7 @@ const firebaseConfig = {
     messagingSenderId: '889113170081',
     appId: '1:889113170081:web:acf4105725c4875882e0e0',
     measurementId: 'G-81GCNGCYQT',
-}
+};
 
 const app = initializeApp(firebaseConfig);
 export const firestoreData = getFirestore(app);

@@ -6,8 +6,8 @@ import cartReducer from './cartReducer';
 import productsReducer from './productsReducer';
 
 const initialState = {
-    cart: JSON.parse(localStorage.getItem('cartProducts') || '[]'),
-    products: JSON.parse(localStorage.getItem('products') || '[]')
+    cart: JSON.parse(localStorage.getItem('cartProducts')) || [],
+    products: JSON.parse(localStorage.getItem('products')) || [],
 }
 
 const rootReducer = combineReducers({
