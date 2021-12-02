@@ -1,46 +1,65 @@
 import React from 'react';
-import Cart from './Cart';
-import styled from 'styled-components';
-import { Navbar, Nav, Container, Image } from 'react-bootstrap';
-import { pages } from '../pages/pages';
+import { pageTitles } from '../utils/consts';
+import { HOME_ROUTE } from '../utils/consts';
+import { NavLink } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
 
-const StyledNavbar = styled(Navbar)`
-    max-height: 6rem;
-    box-shadow: 0 0.1rem 0.5rem 0 rgb(0 0 0 / 4%),
-        0 0.14rem 0.3125rem 0 rgb(0 0 0 / 4%);
-`;
 
-const StyledCart = styled(Cart)`
-    max-heigth: inherit;
-`;
-
-const StyledNavLogo = styled(Image)`
-    display: block;
-    max-height: 5rem;
-    width: auto;
-`;
 
 const NavbarPannel = () => {
-    return (
-      <>
-        <StyledNavbar>
-            <Container>
-             
-                <Nav.Link>
-                    <StyledNavLogo
-                        src={process.env.PUBLIC_URL + 'logo.jpg'}
-                        alt='logo'
-                    ></StyledNavLogo>
-                </Nav.Link>
 
-                {pages.map((page) => (
-                    <Nav.Link key={page.id}>{page.title}</Nav.Link>
-                ))}
-                <StyledCart/>
-               
+    const styles = {
+        link: {
+            color: 'black',
+            textDecoration: 'none',
+            paddingBottom: '1rem',
+        },
+
+        linkActive: {
+            borderBottom: '1.1rem solid red',
+           
+        },
+
+        header: {
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '1.125rem',
+            boxShadow: `0 0.2rem 0.4rem rgb(0 0 0 / 0.06), 
+                        0 0.6rem 0.9rem rgb(0 0 0 / 0.04)`,
+        }
+    }
+
+    
+    return (
+        <Navbar 
+            bg='light' 
+            expand='lg'
+            style={styles.header}
+            >
+            <Container>
+                <NavLink to = {HOME_ROUTE} style={{height: '5rem'}}>
+                    <Image 
+                        src = {process.env.PUBLIC_URL + 'logo.jpg'} 
+                        alt = 'logo'
+                        style={{height: '5rem'}}
+                    />
+                </NavLink>
+                    
+                    {pageTitles.map((page) => (
+                        <NavLink 
+                            
+                            exact to = {page.link}
+                            
+                            style={styles.link}
+                            
+                            
+                            key = {page.id}> {page.title} 
+                        </NavLink>
+                    ))}
+                    
             </Container>
-        </StyledNavbar>
-        </>
+        </Navbar>
     );
 };
 

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import GlobalStyle from './theme/globalStyles';
-import { store } from './store/index';
+import { store } from './store';
 import { BrowserRouter } from 'react-router-dom';
 import NavbarPannel from './components/NavbarPannel';
 import AppRouter from './components/AppRouter';
@@ -27,14 +26,14 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        <>
-            <GlobalStyle />
+        
+            
             <BrowserRouter>
                 <NavbarPannel />
 
                 <AppRouter />
             </BrowserRouter>
-        </>
+        
     );
 };
 
