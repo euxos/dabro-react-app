@@ -1,0 +1,104 @@
+@import "./fonts.scss";
+
+@mixin body-text {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	color: #313237;
+
+
+}
+@mixin buttons {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 21px;
+	color: white;
+}
+@mixin small-text {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
+	color: #313237;
+}
+@mixin h2 {
+	font-family: Poppins, sans-serif;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 140%;
+}
+@mixin h1 {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 41px;
+	letter-spacing: -0.01em;
+	color: #313237;
+}
+@mixin upper-case {
+	font-family: Poppins, sans-serif;
+	font-size: 1.025rem;
+  font-weight: 500;
+	letter-spacing: 0.125rem;
+	text-transform: uppercase;
+	color: #313237;
+}
+@mixin h3 {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 26px;
+	color: #313237;
+}
+@mixin icons-font {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 9px;
+	line-height: 12px;
+	text-align: center;
+	color: white;
+}
+@mixin placeholder {
+	font-family: Poppins, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	color: #b4bdc4;
+}
+@mixin pagination-button {
+	height: 32px;
+	width: 32px;
+	background-color: white;
+	border: 1px solid #e2e6e9;
+	box-sizing: border-box;
+	@include body-text;
+	color: black;
+	margin: 0 4px;
+	outline: none;
+
+	&:hover {
+		border: 1px solid #313237;
+		color: #313237;
+	}
+
+	&:disabled {
+		border: 1px solid #e2e6e9;
+		color: #e2e6e9;
+	}
+	&--active {
+		background-color: #313237;
+		color: white;
+	}
+	&--arrow {
+		margin: 0 12px;
+	}
+}

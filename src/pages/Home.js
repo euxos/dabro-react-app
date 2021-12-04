@@ -9,11 +9,9 @@ const Home = () => {
     const products = useSelector(store => store.products);
 
     return (
-        <Container>
-            <Row>
-
-            </Row>
-        </Container>
+        <>
+        
+        </>
     );
 };
 
