@@ -1,56 +1,66 @@
 @import "../../utils/mixins.scss";
-@import "../../utils/vars.scss";
+@import "../../utils/consts.scss";
 
 .MobileNav {
-	
-  @media screen and (max-width: 1024px) {
-		
-    $header-height: 600px;
-		$main-radius: 130px;
+	position: fixed;
 
-		display: grid;
-		grid-template-columns: 200px;
-		grid-template-rows: auto;
-		grid-row-gap: 28px;
+	margin: 0;
+	padding: 0;
+	top: $header-height-xs;
+	left: 0;
+	z-index: 4;
+	visibility: visible;
+	height: calc(100vh - 80px);
+	width: 100vw;
+	
+	
+
+	font-size: 18px;
+	background-color: grey;
+	border-bottom-left-radius: $m-nav-radius;
+	
+	transition-duration: 0.45s;
+
+	&--hidden {
+		left: 100%;
+		visibility: hidden;
+	}
+
+
+	@media screen and (max-width: 970px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-content: center;
-		position: absolute;
-		visibility: hidden;
-		top: 0;
-		left: 100%;
-		width: 100%;
-		height: $header-height;
-		z-index: 1;
+		height: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
 
-		font-size: 18px;
-		background-color: $prime-color;
-		border: 1px solid transparent;
-		border-bottom-left-radius: $main-radius;
-		transition-duration: 0.6s;
+	&__item {
+		display: flex;
+		height: 30px;
+	}
+		
 
-		&__item {
-			&:last-child {
-				margin-top: 48px;
+		&__link {
+			text-decoration: none;
+			line-height: 6rem;
+			@include upper-case;
+			color: #cdd8e0;
+			&:hover {
+				color: #cdd8e0;
 			}
 		}
-
-		&__link::after {
-			background-color: $main-color;
-		}
 	}
 
-	@media screen and (max-width: 800px) {
-		$header-height: 600px;
-		$nav-height: 80px;
-
-		height: $header-height / 2 + $nav-height;
-		grid-row-gap: 12px;
-		justify-content: start;
-		padding: 48px 0 0 48px;
-		box-sizing: border-box;
-
-		font-size: 14px;
-		border: none;
-		border-bottom-left-radius: 0;
-	}
-}

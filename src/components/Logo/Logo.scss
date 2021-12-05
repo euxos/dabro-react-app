@@ -1,4 +1,22 @@
+@import "../../utils/consts.scss";
+
 .Logo {
-  height: 5.85rem;
-  padding: 0.025rem;
+	display: flex;
+	align-items: center;
+	margin: 0 30px;
+
+	&__img {
+		height: $logo-height;
+		width: 80px;
+		fill: $prime-color;
+		vertical-align: middle;
+	}
+
+	@media screen and (max-width: 970px) {
+
+    margin: 0;
+		&__img {
+			height: $logo-height-xs;
+		}
+	}
 }

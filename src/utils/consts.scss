@@ -1,6 +1,6 @@
 $body-color: #f2f9ff;
 $main-color: #008aff;
-$prime-color: #ff9c8e;
+$prime-color: #eb9b08;
 $prime-color-active: #ff7e6c;
 $title-color: #253757;
 $card-button-color: #334563;
@@ -13,8 +13,15 @@ $card-color-3: #f25656;
 $card-color-4: #15d850;
 
 $max-width-container: 1600px;
-$max-width-desc: 1146px;
-$logo-width: 46px;
-$nav-height: 120px;
-$header-height: 6rem;
-$main-radius: 200px;
+$max-width-desc: 1170px;
+
+$logo-height: 114px;
+$logo-height-xs: 68px;
+
+$header-height: 120px;
+$header-height-xs: 80px;
+
+$m-nav-radius: 200px;
+$line-size: 0.265rem;
+
+

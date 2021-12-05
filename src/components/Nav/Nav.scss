@@ -1,36 +1,39 @@
 @import "../../utils/mixins.scss";
+@import "../../utils/consts.scss";
 
 .Nav {
-	display: flex;
-	width: 1200px;
-	margin: auto;
+	width: 100%;
 
-  @media screen and (max-width: 970px) {
-    display: none;
-    position: absolute;
-    left: 0;
-    margin: 0;
-    max-width: 320px;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-  }
+	@media screen and (max-width: 970px) {
+		display: none;
+		position: absolute;
+		left: 0;
+		margin: 0;
+		max-width: 320px;
+		height: 0;
+		width: 0;
+		background-color: white;
+	}
 
 	&__list {
 		display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-		width: 100%;
-    height: 100%;
-   	margin: 0;
-    padding: 0;
-    list-style: none;
+		justify-content: space-between;
+		align-items: stretch;
+		
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
-	  
+
 	&__item {
 		display: flex;
-		align-items:  baseline;
-		margin:0  auto;
+		align-items: center;
+		margin: 0 auto;
+	}
+
+	&__logo {
+		max-height: $logo-height;
+		vertical-align: middle;
 	}
 
 	&__link {
@@ -43,8 +46,16 @@
 		}
 		&.active {
 			color: #313237;
-			border-bottom: 0.265rem solid orange;
-		}
-  }
-}
+			position: relative;
 
+			&::before {
+				content: "";
+				border-bottom: $line-size  solid orange;
+				display: block;
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+			}
+		}
+	}
+}

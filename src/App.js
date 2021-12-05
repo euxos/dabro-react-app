@@ -14,10 +14,10 @@ import { getProducts } from './firestoreApp';
 const App = () => {
 	const dispatch = useDispatch();
 
-	const p = useSelector(store => store.products);
+	const products = useSelector(store => store.products);
 
 	useEffect(() => {
-		if (p.length === 0) {
+		if (products.length === 0) {
 			getProducts().then((docs) => {
 				dispatch(downloadProducts(docs));
 
@@ -26,14 +26,14 @@ const App = () => {
 		}
 
 
-	}, [dispatch]);
+	}, [products, dispatch]);
 
 	return (
 		
 			
 			<BrowserRouter>
 				<Header />
-
+				<main className="App__main"></main>
 				<AppRouter />
 			</BrowserRouter>
 		

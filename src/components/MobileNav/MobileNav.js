@@ -1,19 +1,20 @@
 import React from "react";
 import "./MobileNav.scss";
-import { pageTitles } from "../../utils/consts";
+import { pages } from "../../utils/consts";
 import { NavLink } from "react-router-dom";
 
-const MobileNav = ({ isMobile }) => {
+const MobileNav = ({ isVisible }) => {
+
+
 	return (
-		<nav className={isMobile ? "MobileNav" : "MobileNav MobileNav--hidden"}>
+		<nav className={isVisible ? "MobileNav" : "MobileNav MobileNav--hidden"}>
 			<ul className="MobileNav__list">
-				{pageTitles.map((page) => {
+				{pages.map((page) => {
 					const { id, title, link } = page;
 					return (
 						<li className="MobileNav__item" key={title + id}>
 							<NavLink
 								className="MobileNav__link"
-								exact
 								to={link}
 							>
 								{title}

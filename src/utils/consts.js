@@ -10,7 +10,7 @@ export const SAUCES_ROUTE = '/sauces';
 export const PRODUCT_ROUTE = '/product';
 export const ABOUT_ROUTE = '/about';
 
-export const pageTitles = [
+export const pages = [
     { id: '0', title: 'Menu', link: MENU_ROUTE},
     { id: '1', title: 'Sets', link: SETS_ROUTE},    
     { id: '2', title: 'Burgers', link: BURGERS_ROUTE}, 
