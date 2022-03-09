@@ -16,7 +16,10 @@ const Header = () => {
 	return (
 		<header className="Header">
 			<div className="Header__wrapper">
-				<Logo controlMobNav={controlMobNav} />
+				<Logo
+					isMobNavOpen={isMobNavOpen}
+					controlMobNav={controlMobNav}
+				/>
 				<Nav />
 
 				<MenuButton
