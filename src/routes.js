@@ -1,8 +1,17 @@
-import { ABOUT_ROUTE, BURGERS_ROUTE, CART_ROUTE, HOME_ROUTE, MENU_ROUTE, PRODUCT_ROUTE, ROLLS_ROUTE, SAUCES_ROUTE, SETS_ROUTE, SIDES_ROUTE } from "./utils/consts";
+import { 
+    HOME_ROUTE, 
+    STORES_ROUTE,
+    SERVIECES_ROUTE,
+    ACTIVISTS_ROUTE,
+    FOODS_ROUTE,
+    STORES_TITLE,
+    SERVIECES_TITLE,
+    FOODS_TITLE,
+    ACTIVISTS_TITLE,
+   } from "./utils/consts";
+
 import Home from "./pages/Home";
-import Menu from "./pages/Menu";
-import About from "./pages/About";
-import Cart from "./pages/Cart";
+import Page from "./components/Page";
 
 
 export const routes = [
@@ -11,39 +20,21 @@ export const routes = [
         element: <Home />
     },
     {
-        path: MENU_ROUTE,
-        element: <Menu />
+        path: STORES_ROUTE,
+        element: <Page title={STORES_TITLE} />
     },
     {
-        path: ABOUT_ROUTE,
-        element: <About />
+        path: SERVIECES_ROUTE,
+        element: <Page title={SERVIECES_TITLE} />
     },
     {
-        path: CART_ROUTE,
-        element: <Cart />
+        path: FOODS_ROUTE,
+        element: <Page title={FOODS_TITLE} />
     },
     {
-        path: BURGERS_ROUTE,
-        element: <Menu />
+        path: ACTIVISTS_ROUTE,
+        element: <Page title={ACTIVISTS_TITLE} />
     },
-    {
-        path: ROLLS_ROUTE,
-        element: <Menu />
-    },
-    {
-        path: SIDES_ROUTE,
-        element: <Menu />
-    },
-    {
-        path: SETS_ROUTE,
-        element: <Menu />
-    },
-    {
-        path: SAUCES_ROUTE,
-        element: <Menu />
-    },
-    {
-        path: PRODUCT_ROUTE + '/:id',
-        element: <Menu />
-    },
+    
+    
 ]

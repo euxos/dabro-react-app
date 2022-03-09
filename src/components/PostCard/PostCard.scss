@@ -1,0 +1,52 @@
+@import "../../utils/mixins.scss";
+@import "../../utils/consts.scss";
+
+.PostCard {
+  padding: 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  background-color: $body-color;
+  border-radius: 3px;
+  border: 1px solid $prime-color;
+  box-shadow: 0 0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.06),
+		0 0.4rem 0.4rem 0.1rem rgba(0, 0, 0, 0.04);
+
+  &__title {
+    @include h2;
+    color: $prime-text;
+  }
+
+  &__link {
+    @include link;
+    color: $minor-text;
+  }
+
+
+  &__sm-text {
+    @include sm-text;
+    color: $minor-text;
+
+    &--it {
+      @include italic;
+    }
+  }
+
+  &__md-text {
+    @include md-text;
+    margin-top: 8px;
+    color: $prime-text;
+    font-style: italic;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    opacity: .4;
+
+    margin-right: 6px;
+  }
+}

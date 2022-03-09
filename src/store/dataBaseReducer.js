@@ -1,6 +1,6 @@
 const DOWNLOAD_LIST = 'DOWNLOAD_LIST';
 
-export const downloadProducts = (payload) => ({ type: DOWNLOAD_LIST, payload });
+export const downloadDataBase = (payload) => ({ type: DOWNLOAD_LIST, payload });
 
 export default function productsReducer(state = [], action) {
     switch (action.type) {

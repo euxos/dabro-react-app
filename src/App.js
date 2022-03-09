@@ -1,42 +1,44 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Header from './components/Header/Header';
-import './App.scss';
+import React, { useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import useGoogleSheets from "use-google-sheets";
+import { useDispatch } from "react-redux";
 
-import AppRouter from './components/AppRouter';
+import "./App.scss";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
-import { downloadProducts } from './store/productsReducer';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { getProducts } from './firestoreApp';
+import { downloadDataBase } from "./store/dataBaseReducer";
 
 
 const App = () => {
-	const dispatch = useDispatch();
 
-	const products = useSelector(store => store.products);
+	const dispatch = useDispatch();
+	
+	const { data, loading, error } = useGoogleSheets({
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+    sheetId: process.env.REACT_APP_GOOGLE_SHEET_ID,
+		sheetsNames: ['Data'],
+  });
 
 	useEffect(() => {
-		if (products.length === 0) {
-			getProducts().then((docs) => {
-				dispatch(downloadProducts(docs));
-
-				localStorage.setItem('products', JSON.stringify(docs));
-			});
+		if (data.length > 0) {
+			dispatch(downloadDataBase(data[0].data));
 		}
+	}, [dispatch, data]);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-	}, [products, dispatch]);
+  if (error) {
+  return <div>Error!</div>;
+  }
 
 	return (
-		
-			
-			<BrowserRouter>
-				<Header />
-				<main className="App__main"></main>
-				<AppRouter />
-			</BrowserRouter>
-		
+		<BrowserRouter>
+			<Header />
+			<Main />
+		</BrowserRouter>
 	);
 };
 

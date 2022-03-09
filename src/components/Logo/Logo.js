@@ -7,15 +7,9 @@ const Logo = () => {
 	return (
 		<label className="Logo">
 			<NavLink to={HOME_ROUTE}>
-
-				{/* <svg className="Logo__img">
-					<use href={process.env.PUBLIC_URL + "L0.svg"}></use>
-				</svg>  */}
-
-
 				<img
 					className="Logo__img"
-					src={process.env.PUBLIC_URL + "logo.svg"}
+					src={process.env.PUBLIC_URL + "trident.png"}
 					alt="logo"
 				/>
 			</NavLink>

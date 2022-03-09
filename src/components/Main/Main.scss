@@ -1,0 +1,24 @@
+@import "../../utils/mixins.scss";
+@import "../../utils/consts.scss";
+
+.Main {
+	position: relative;
+	max-width: $max-width-desktop;
+
+	margin: $header-height+48px auto;
+	padding: 0 40px;
+	overflow: hidden;
+
+	&__wrapper {
+		width: 100%;;
+	}
+
+	&__list {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}

@@ -3,18 +3,18 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 import cartReducer from './cartReducer';
-import productsReducer from './productsReducer';
+import productsReducer from './dataBaseReducer';
 import mobNavReducer from "./mobNavReducer";
 
 const initialState = {
-    cart: JSON.parse(localStorage.getItem('cartProducts')) || [],
-    products: JSON.parse(localStorage.getItem('products')) || [],
+    cart: [],
+    dataBase: [],
     isOpened: false,
-}
+};
 
 const rootReducer = combineReducers({
     cart: cartReducer,
-    products: productsReducer,
+    dataBase: productsReducer,
     isOpened: mobNavReducer,
 });
 

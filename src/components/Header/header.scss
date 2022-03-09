@@ -1,34 +1,27 @@
 @import "../../utils/mixins.scss";
 @import "../../utils/consts.scss";
-@import "../../utils/fonts.scss";
 
 .Header {
 	position: fixed;
 	right: 0;
 	left: 0;
 	top:0;
-	display: flex;
-	justify-content: center;
-	background: white;
+	padding: 0 40px;
+	z-index: 10;
+	overflow: hidden;
+
+	background: $body-color;
 	box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0, 0, 0, 0.06),
-		0 0.6rem 0.9rem 0.2rem rgba(0, 0, 0, 0.04);
-
-		overflow: hidden;
-
+		0 0.6rem 0.6rem 0.2rem rgba(0, 0, 0, 0.04);
 
 	&__wrapper {
 		position: relative;
-		max-width: $max-width-desc;
+		max-width: $max-width-desktop;
 		width: 100%;
-		max-height: $header-height;
+		height: $header-height;
 		
-
 		display: flex;
-		justify-content: space-around;
-		align-items: stretch;
-
 		margin: 0 auto;
-		padding: 0;
 
 		@media screen and (max-width: 970px) {
 			margin: 0 20px;

@@ -1,21 +1,18 @@
 export const HOME_ROUTE = '/';
-export const MENU_ROUTE = '/menu';
-export const TEAM_ROUTE = '/team';
-export const CART_ROUTE = '/cart';
-export const BURGERS_ROUTE = '/burgers';
-export const ROLLS_ROUTE = '/rolls';
-export const SIDES_ROUTE = '/sides';
-export const SETS_ROUTE = '/sets';
-export const SAUCES_ROUTE = '/sauces';
-export const PRODUCT_ROUTE = '/product';
 export const ABOUT_ROUTE = '/about';
+export const STORES_ROUTE = '/stores';
+export const SERVIECES_ROUTE = '/servieces';
+export const FOODS_ROUTE = '/foods';
+export const ACTIVISTS_ROUTE = '/activists';
+
+export const STORES_TITLE = 'Магазини';
+export const SERVIECES_TITLE = 'Послуги';
+export const FOODS_TITLE = 'Їжа та напої';
+export const ACTIVISTS_TITLE = 'Волонтери';
 
 export const pages = [
-    { id: '0', title: 'Menu', link: MENU_ROUTE},
-    { id: '1', title: 'Sets', link: SETS_ROUTE},    
-    { id: '2', title: 'Burgers', link: BURGERS_ROUTE}, 
-    { id: '3', title: 'Rolls', link: ROLLS_ROUTE}, 
-    { id: '4', title: 'Sides', link: SIDES_ROUTE}, 
-    { id: '5', title: 'Sauces', link: SAUCES_ROUTE}, 
-    { id: '6', title: 'About', link: ABOUT_ROUTE} 
+    { id: '0', title: 'Магазини', link: STORES_ROUTE},
+    { id: '1', title: 'Послуги', link: SERVIECES_ROUTE},    
+    { id: '6', title: 'Їжа та напої', link: FOODS_ROUTE},
+    { id: '2', title: 'Волонтери', link: ACTIVISTS_ROUTE}, 
 ]
