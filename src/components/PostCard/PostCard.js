@@ -10,7 +10,7 @@ const PostCard = ({ title, worktime, adress, phone, description }) => {
 				<div className="PostCard__sm-text">
 					<img
 						className="PostCard__icon"
-						src={process.env.PUBLIC_URL + "clock.svg"}
+						src={process.env.PUBLIC_URL + "worktime.svg"}
 						alt="icon"
 					/>
 					{worktime}
@@ -20,7 +20,7 @@ const PostCard = ({ title, worktime, adress, phone, description }) => {
 				<div className="PostCard__sm-text PostCard__sm-text--it">
 					<img
 						className="PostCard__icon"
-						src={process.env.PUBLIC_URL + "maps-black.svg"}
+						src={process.env.PUBLIC_URL + "adress.svg"}
 						alt="icon"
 					/>
 					{adress}
@@ -31,24 +31,24 @@ const PostCard = ({ title, worktime, adress, phone, description }) => {
 					<a className="PostCard__link" href={`tel:${phone}`}>
 						<img
 							className="PostCard__icon"
-							src={process.env.PUBLIC_URL + "phone-call.svg"}
+							src={process.env.PUBLIC_URL + "phone.svg"}
 							alt="icon"
 						/>
 						{phone}
 					</a>
 				</span>
 			)}
-
 			{description && (
 				<div className="PostCard__md-text">
 					<img
 						className="PostCard__icon"
-						src={process.env.PUBLIC_URL + "comment.svg"}
+						src={process.env.PUBLIC_URL + "description.svg"}
 						alt="icon"
 					/>
 					{description}
 				</div>
 			)}
+			
 		</li>
 	);
 };

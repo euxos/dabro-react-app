@@ -1,10 +1,10 @@
 export const HOME_ROUTE = '/';
-export const ABOUT_ROUTE = '/about';
 export const STORES_ROUTE = '/stores';
 export const SERVIECES_ROUTE = '/servieces';
 export const FOODS_ROUTE = '/foods';
 export const ACTIVISTS_ROUTE = '/activists';
 
+export const HOME_TITLE = 'Головна';
 export const STORES_TITLE = 'Магазини';
 export const SERVIECES_TITLE = 'Послуги';
 export const FOODS_TITLE = 'Їжа та напої';

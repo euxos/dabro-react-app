@@ -8,33 +8,25 @@ import "./Header.scss";
 const Header = () => {
 	const [isMobNavOpen, setMobNavOpen] = useState(false);
 
-  console.log(isMobNavOpen);
-
-	const openMobNav = useCallback(
+	const controlMobNav = useCallback(
 		() => setMobNavOpen(!isMobNavOpen),
 		[isMobNavOpen]
 	);
 
-	//   useEffect(() => {
-	//     const f = () => {
-	//       if (mobNavOpened) {
-	//         setMobNavOpened(false);
-	//       };
-	//     };
-	//     document.addEventListener("click", f)
-	//
-	//     return () => { document.removeEventListener('click', f) }
-	//
-	//   }, [mobNavOpened])
-
 	return (
 		<header className="Header">
 			<div className="Header__wrapper">
-				<Logo />
+				<Logo controlMobNav={controlMobNav} />
 				<Nav />
 
-				<MenuButton isOpened={isMobNavOpen} openMobNav={openMobNav} />
-				<MobileNav isVisible={isMobNavOpen} />
+				<MenuButton
+					isOpened={isMobNavOpen}
+					controlMobNav={controlMobNav}
+				/>
+				<MobileNav
+					isVisible={isMobNavOpen}
+					controlMobNav={controlMobNav}
+				/>
 			</div>
 		</header>
 	);

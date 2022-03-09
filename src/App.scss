@@ -1,12 +1,13 @@
 @import "./utils/fonts.scss";
+@import "./utils/consts.scss";
 
 html {
   width: 100%;
-
   font-family: Poppins, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: $bg-color;
 }

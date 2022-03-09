@@ -1,5 +1,5 @@
 import { 
-    HOME_ROUTE, 
+    HOME_ROUTE,
     STORES_ROUTE,
     SERVIECES_ROUTE,
     ACTIVISTS_ROUTE,
@@ -10,9 +10,8 @@ import {
     ACTIVISTS_TITLE,
    } from "./utils/consts";
 
-import Home from "./pages/Home";
+import Home from "./components/Home";
 import Page from "./components/Page";
-
 
 export const routes = [
     {
@@ -35,6 +34,4 @@ export const routes = [
         path: ACTIVISTS_ROUTE,
         element: <Page title={ACTIVISTS_TITLE} />
     },
-    
-    
 ]

@@ -1,14 +1,12 @@
 import React from "react";
-import { pages } from "../../utils/consts";
-
-import "./Nav.scss";
 import { NavLink } from "react-router-dom";
+import { pages } from "../../utils/consts";
+import "./Nav.scss";
 
 const Nav = () => {
 	return (
 		<nav className="Nav">
 			<ul className="Nav__list">
-	
 				{pages.map((page) => {
 					const { id, title, link } = page;
 					return (

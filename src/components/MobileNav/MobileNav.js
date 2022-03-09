@@ -3,8 +3,7 @@ import "./MobileNav.scss";
 import { pages } from "../../utils/consts";
 import { NavLink } from "react-router-dom";
 
-const MobileNav = ({ isVisible }) => {
-
+const MobileNav = ({ isVisible, controlMobNav }) => {
 
 	return (
 		<nav className={isVisible ? "MobileNav" : "MobileNav MobileNav--hidden"}>
@@ -15,6 +14,7 @@ const MobileNav = ({ isVisible }) => {
 						<li className="MobileNav__item" key={title + id}>
 							<NavLink
 								className="MobileNav__link"
+								onClick={controlMobNav}
 								to={link}
 							>
 								{title}

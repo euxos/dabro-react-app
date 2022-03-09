@@ -1,16 +1,14 @@
-@import "../../utils/mixins.scss";
 @import "../../utils/consts.scss";
 
 .Header {
 	position: fixed;
 	right: 0;
 	left: 0;
-	top:0;
+	top: 0;
 	padding: 0 40px;
 	z-index: 10;
 	overflow: hidden;
-
-	background: $body-color;
+	background-color: $bg-color;
 	box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0, 0, 0, 0.06),
 		0 0.6rem 0.6rem 0.2rem rgba(0, 0, 0, 0.04);
 
@@ -19,7 +17,7 @@
 		max-width: $max-width-desktop;
 		width: 100%;
 		height: $header-height;
-		
+
 		display: flex;
 		margin: 0 auto;
 

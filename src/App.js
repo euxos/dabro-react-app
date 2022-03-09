@@ -9,7 +9,6 @@ import Main from "./components/Main/Main";
 
 import { downloadDataBase } from "./store/dataBaseReducer";
 
-
 const App = () => {
 
 	const dispatch = useDispatch();

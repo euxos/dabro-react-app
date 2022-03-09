@@ -5,8 +5,7 @@ export const downloadDataBase = (payload) => ({ type: DOWNLOAD_LIST, payload });
 export default function productsReducer(state = [], action) {
     switch (action.type) {
         case DOWNLOAD_LIST:
-            return [...action.payload]
-
+            return [...action.payload];
         default:
             return state;
     }

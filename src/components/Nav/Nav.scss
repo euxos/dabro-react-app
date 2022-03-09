@@ -2,8 +2,6 @@
 @import "../../utils/consts.scss";
 
 .Nav {
-	width: 100%;
-
 	@media screen and (max-width: 970px) {
 		display: none;
 		position: absolute;
@@ -12,7 +10,6 @@
 		max-width: 320px;
 		height: 0;
 		width: 0;
-		background-color: $body-color;
 	}
 
 	&__list {
