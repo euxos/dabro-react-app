@@ -1,9 +1,8 @@
 @import "../../utils/consts.scss";
 
 .Logo {
-	display: flex;
 	align-items: center;
-	margin: 0 30px;
+	width: $header-height;
 
 	&__img {
 		height: $logo-height;
@@ -11,8 +10,8 @@
 	}
 
 	@media screen and (max-width: 970px) {
-
-    margin: 0;
+		width: $header-height-xs;
+		
 		&__img {
 			height: $logo-height-xs;
 		}

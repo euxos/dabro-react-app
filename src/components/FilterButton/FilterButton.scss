@@ -1,0 +1,35 @@
+@import "../../utils/consts.scss";
+@import "../../utils/mixins.scss";
+
+.sidebar-button,
+.sidebar-heading {   
+  padding: 0.5rem 1rem;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.sidebar-button {
+  @include sm-text;
+  border-right: $line-size solid rgba($prime-color, 0.6);
+  background-color: rgba($side-color, 0.6);
+
+  &.active {
+    border-right: $line-size solid $minor-color;
+    background-color: rgba($minor-color, 0.2);
+  } 
+}
+
+.sidebar-heading {
+  @include uppercase;
+  border-right: $line-size solid rgba($prime-color, 1);
+  background-color: rgba($side-color, 1);
+  &.active {
+    border-right: $line-size solid $minor-color;
+    background-color: rgba($minor-color, 0.3);
+  }
+}

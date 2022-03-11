@@ -3,19 +3,16 @@
 
 .MobileNav {
 	position: fixed;
-
 	margin: 0;
 	padding: 0;
 	top: $header-height-xs;
 	left: 0;
 	z-index: 4;
 	visibility: visible;
-	height: calc(100vh - 80px);
+	height: calc(100vh - 60px);
 	width: 100vw;
-
 	background-color: $prime-color;
 	border-bottom-left-radius: $m-nav-radius;
-
 	transition-duration: 0.45s;
 
 	&--hidden {
@@ -26,15 +23,15 @@
 	@media screen and (max-width: 970px) {
 		display: flex;
 		justify-content: center;
-		align-items: start;
+		align-items: flex-start;
 	}
 
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(1, auto); 
 		row-gap: 24px;
-		justify-items: start;
-		align-items: start;
+		justify-items: flex-start;
+		align-items: flex-start;
 
 		list-style: none;
 		padding: 0;

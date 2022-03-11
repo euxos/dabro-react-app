@@ -1,0 +1,24 @@
+@import "../../utils/mixins.scss";
+@import "../../utils/consts.scss";
+
+.sidebar {
+	&-navigation {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		position: sticky;
+    top: $header-height+$content-margin;
+    padding: 0;
+    margin: 0;
+	}
+}
+
+.main-page-content {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

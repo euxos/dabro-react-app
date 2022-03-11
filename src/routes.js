@@ -11,7 +11,7 @@ import {
    } from "./utils/consts";
 
 import Home from "./components/Home";
-import Page from "./components/Page";
+import Page from "./components/Page/Page";
 
 export const routes = [
     {
@@ -20,18 +20,18 @@ export const routes = [
     },
     {
         path: STORES_ROUTE,
-        element: <Page title={STORES_TITLE} />
+        element: <Page pageQuery={STORES_TITLE} pageKey={"category"} />
     },
     {
         path: SERVIECES_ROUTE,
-        element: <Page title={SERVIECES_TITLE} />
+        element: <Page pageQuery={SERVIECES_TITLE} pageKey={"category"} />
     },
     {
         path: FOODS_ROUTE,
-        element: <Page title={FOODS_TITLE} />
+        element: <Page pageQuery={FOODS_TITLE} pageKey={"category"} />
     },
     {
         path: ACTIVISTS_ROUTE,
-        element: <Page title={ACTIVISTS_TITLE} />
+        element: <Page pageQuery={ACTIVISTS_TITLE} pageKey={"category"} />
     },
 ]

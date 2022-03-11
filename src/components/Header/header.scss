@@ -1,9 +1,7 @@
 @import "../../utils/consts.scss";
 
 .Header {
-	position: fixed;
-	right: 0;
-	left: 0;
+	position: sticky;
 	top: 0;
 	padding: 0 40px;
 	z-index: 10;
@@ -18,11 +16,13 @@
 		width: 100%;
 		height: $header-height;
 
-		display: flex;
+		display: grid;
+		grid-template-columns:  minmax(0,1fr)  minmax(0,5fr);
+		grid-gap: 3rem;
 		margin: 0 auto;
 
 		@media screen and (max-width: 970px) {
-			margin: 0 20px;
+			margin: 0;
 			height: $header-height-xs;
 			justify-content: space-between;
 		}

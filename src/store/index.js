@@ -1,22 +1,19 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
-import productsReducer from './dataBaseReducer';
-import mobNavReducer from "./mobNavReducer";
+import dataReducer from "./dataReducer";
 
 const initialState = {
-    dataBase: [],
-    isOpened: false,
+	data: [],
 };
 
 const rootReducer = combineReducers({
-    dataBase: productsReducer,
-    isOpened: mobNavReducer,
+	data: dataReducer,
 });
 
 export const store = createStore(
-    rootReducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(thunk))
+	rootReducer,
+	initialState,
+	composeWithDevTools(applyMiddleware(thunk))
 );

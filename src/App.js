@@ -7,7 +7,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
-import { downloadDataBase } from "./store/dataBaseReducer";
+import { downloadData } from "./store/dataReducer";
 
 const App = () => {
 
@@ -21,7 +21,7 @@ const App = () => {
 
 	useEffect(() => {
 		if (data.length > 0) {
-			dispatch(downloadDataBase(data[0].data));
+			dispatch(downloadData(data[0].data));
 		}
 	}, [dispatch, data]);
 
