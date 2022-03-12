@@ -1,0 +1,32 @@
+@import "../../utils/mixins.scss";
+@import "../../utils/consts.scss";
+
+.home {
+  &-heading {
+    @include uppercase;
+    display: block;
+    align-self: start;
+    max-height: 32px;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    text-align: left;
+    border: none;
+    border-radius: 0;
+    border-right: $line-size solid $minor-color;
+    background-color: rgba($minor-color, 0.3);
+  }
+
+  &-description {
+    font-style: italic;
+    color: $prime-text;
+    max-width: 700px;
+  }
+
+  &-h3 {
+    margin: 0;
+  }
+
+  &-note {
+    @include md-text;
+  }
+}

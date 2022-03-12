@@ -10,7 +10,7 @@ import {
     ACTIVISTS_TITLE,
    } from "./utils/consts";
 
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import Page from "./components/Page/Page";
 
 export const routes = [

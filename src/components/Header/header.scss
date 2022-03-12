@@ -24,7 +24,7 @@
 		@media screen and (max-width: 970px) {
 			margin: 0;
 			height: $header-height-xs;
-			justify-content: space-between;
+			grid-template-columns:  minmax(0,1fr)  minmax(0,1fr);
 		}
 	}
 }

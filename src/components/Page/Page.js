@@ -46,24 +46,37 @@ const Page = ({ pageKey, pageQuery }) => {
 	return (
 		<>
 			<nav className="sidebar">
-				<ul className="sidebar-navigation">
-					<FilterButton
-						selector={(filterQuery === "") ? "sidebar-heading active" : "sidebar-heading"}
-						title={pageQuery}
-						query={""}
-						clickFilter={clickFilter}
-					/>
-					{filters.map((item, index) => (
+				
+					<ul className="sidebar-navigation">
 						<FilterButton
-							selector={(filterQuery === item) ? "sidebar-button active" : "sidebar-button"}
-							title={item}
-							query={item}
+							selector={
+								filterQuery === ""
+									? "sidebar-heading active"
+									: "sidebar-heading"
+							}
+							title={pageQuery}
+							query={""}
 							clickFilter={clickFilter}
-							key={"b" + index}
 						/>
-					))}
-				</ul>
+
+						{filters.length > 1 && filters.map((item, index) => (
+							<FilterButton
+								selector={
+									filterQuery === item
+										? "sidebar-button active"
+										: "sidebar-button"
+								}
+								title={item}
+								query={item}
+								clickFilter={clickFilter}
+								key={"b" + index}
+							/>
+						))}
+
+					</ul>
+			
 			</nav>
+
 			<main className="main-content">
 				<ul className="main-page-content">
 					{visibleItems.map((item) => (
