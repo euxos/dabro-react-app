@@ -4,12 +4,12 @@ import "./FilterButton.scss";
 
 const FilterButton = ({ title, query, clickFilter, selector }) => {
 	return (
-		<button
+		<div
 			className={selector}
 			onClick={() => clickFilter(query)}
 		>
 			{title}
-		</button>
+		</div>
 	);
 };
 

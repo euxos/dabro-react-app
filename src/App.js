@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
 import { downloadData } from "./store/dataReducer";
+import { downloadNote } from "./store/noteReducer";
 
 const App = () => {
 
@@ -16,12 +17,13 @@ const App = () => {
 	const { data, loading, error } = useGoogleSheets({
     apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     sheetId: process.env.REACT_APP_GOOGLE_SHEET_ID,
-		sheetsNames: ['Data'],
+		sheetsNames: ['Data','Note'],
   });
 
 	useEffect(() => {
 		if (data.length > 0) {
 			dispatch(downloadData(data[0].data));
+			dispatch(downloadNote(data[1].data[0]));
 		}
 	}, [dispatch, data]);
 

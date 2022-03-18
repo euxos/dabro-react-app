@@ -11,6 +11,12 @@
     top: $header-height+$content-margin;
     padding: 0;
     margin: 0;
+		list-style-type: none;
+	}
+
+	&-item {
+		display: block;
+		width: 100%;
 	}
 }
 

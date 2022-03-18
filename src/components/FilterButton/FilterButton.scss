@@ -6,10 +6,13 @@
   padding: 0.5rem 1rem;
   margin: 0;
   text-align: left;
-  width: 100%;
   border: none;
   border-radius: 0;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  line-height: 24px;
 }
 
 .sidebar-button {
@@ -21,6 +24,10 @@
     border-right: $line-size solid $minor-color;
     background-color: rgba($minor-color, 0.2);
   } 
+
+  &::visited {
+    color: inherit;
+  }
 }
 
 .sidebar-heading {
