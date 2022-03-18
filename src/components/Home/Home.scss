@@ -22,11 +22,11 @@
 	}
 
 	&-phone {
-		color: inherit;
+		color: $prime-text;
 		text-decoration: none;
 
     &::visited {
-      color: inherit;
+      color: $prime-text;
     }
 	}
 }
